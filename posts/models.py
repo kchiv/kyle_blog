@@ -10,7 +10,7 @@ from django.template.defaultfilters import slugify
 class Post(models.Model):
 	title = models.CharField(max_length=250)
 	pub_date = models.DateTimeField()
-	image = models.ImageField(upload_to='media/', blank=True, null=True)
+	image = models.ImageField(upload_to='media/', blank=True, default='')
 	body = models.TextField(blank=True, null=True)
 	slug = models.SlugField(max_length=60, blank=True)
 

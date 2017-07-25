@@ -8,4 +8,4 @@ from .models import Post
 
 def post_details(request, post_id, slug):
 	post = get_object_or_404(Post, pk=post_id, slug=slug)
-	return render(request, 'posts/post_detail.html', {'post':post})
+	return render(request, 'posts/post_page.html', {'post':post})

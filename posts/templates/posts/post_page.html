@@ -6,6 +6,6 @@
 
 	<h1>{{ post.title }}</h1>
 	<p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}</p>
-	<p>{{ post.body }}</p>
+	<p>{{ post.body|safe }}</p>
 
 {% endblock %}

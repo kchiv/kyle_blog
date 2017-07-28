@@ -6,6 +6,6 @@ from .models import Page
 
 # Create your views here.
 
-def single_page(request, slug):
-	page = get_object_or_404(Page, slug=slug)
-	return render(request, 'pages/single_page.html', {'page':page})
+def single_page(request, page_slug):
+	page = get_object_or_404(Page, slug=page_slug)
+	return render(request, 'pages/page.html', {'page':page})

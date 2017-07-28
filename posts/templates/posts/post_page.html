@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
 
 	<h1>{{ post.title }}</h1>
 	<p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}</p>
 	<p>{{ post.body }}</p>
 
-</body>
-</html>
+{% endblock %}

@@ -12,4 +12,5 @@ def post_page(request, post_slug, category_slug):
 
 def category_page(request, category_slug):
 	posts = Post.objects.filter(category__slug=category_slug).order_by('-pub_date')
+	category = Category.objects.filter(slug=category_slug)
 	return render(request, 'posts/category_page.html', {'posts':posts})

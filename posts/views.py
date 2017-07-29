@@ -12,5 +12,5 @@ def post_page(request, post_slug, category_slug):
 
 def category_page(request, category_slug):
 	posts = Post.objects.filter(category__slug=category_slug).order_by('-pub_date')
-	category = get_object_or_404(Category, slug=category_slug)
-	return render(request, 'posts/category_page.html', {'posts':posts, 'category':category})
+	cat_obj = get_object_or_404(Category, slug=category_slug)
+	return render(request, 'posts/category_page.html', {'posts':posts, 'cat_obj':cat_obj})

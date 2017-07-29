@@ -30,6 +30,9 @@
   	    </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       		<ul class="nav navbar-nav navbar-right">
+          {% for cat in category %}
+            <li><a href="{% url 'posts:category_page' cat.slug %}">{{ cat.title }}</a></li>
+          {% endfor %}
       			<li><a href="{% url 'pages:single_page' page_slug='about' %}">About</a></li>
       		</ul>
         </div>

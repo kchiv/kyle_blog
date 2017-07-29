@@ -9,6 +9,8 @@ from django.template.defaultfilters import slugify
 
 class Category(models.Model):
 	title = models.CharField(max_length=100, db_index=True, unique=True)
+	image = models.ImageField(upload_to='media/', blank=True, null=True)
+	body = models.TextField(blank=True, default='')
 	slug = models.SlugField(max_length=100, db_index=True, blank=True, unique=True)
 
 	def save(self, *args, **kwargs):

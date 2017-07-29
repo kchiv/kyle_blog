@@ -9,6 +9,8 @@ from django.template.defaultfilters import slugify
 
 class Page(models.Model):
 	title = models.CharField(max_length=250)
+	meta_desc = models.CharField(max_length=200, blank=True)
+	header = models.CharField(max_length=200, blank=True)
 	pub_date = models.DateTimeField()
 	image = models.ImageField(upload_to='media/', blank=True, null=True)
 	body = models.TextField(blank=True, default='')
@@ -17,6 +19,10 @@ class Page(models.Model):
 	def save(self, *args, **kwargs):
 		if not self.slug:
 			self.slug = slugify(self.title)
+		if not self.meta_desc:
+			self.meta_desc = self.body[:175] + '...'
+		if not self.header:
+			self.header = self.title
 		super(Page, self).save(*args, **kwargs)
 
 	def __str__(self):

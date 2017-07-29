@@ -9,6 +9,8 @@ from django.template.defaultfilters import slugify
 
 class Category(models.Model):
 	title = models.CharField(max_length=100, db_index=True, unique=True)
+	meta_desc = models.CharField(max_length=200, blank=True)
+	header = models.CharField(max_length=200, blank=True)
 	image = models.ImageField(upload_to='media/', blank=True, null=True)
 	body = models.TextField(blank=True, default='')
 	slug = models.SlugField(max_length=100, db_index=True, blank=True, unique=True)
@@ -16,6 +18,10 @@ class Category(models.Model):
 	def save(self, *args, **kwargs):
 		if not self.slug:
 			self.slug = slugify(self.title)
+		if not self.meta_desc:
+			self.meta_desc = self.body[:175] + '...'
+		if not self.header:
+			self.header = self.title
 		super(Category, self).save(*args, **kwargs)
 
 	def __str__(self):
@@ -23,6 +29,8 @@ class Category(models.Model):
 
 class Post(models.Model):
 	title = models.CharField(max_length=250, unique=True)
+	meta_desc = models.CharField(max_length=200, blank=True)
+	header = models.CharField(max_length=200, blank=True)
 	pub_date = models.DateTimeField()
 	image = models.ImageField(upload_to='media/', blank=True, null=True)
 	body = models.TextField(blank=True, default='')
@@ -32,6 +40,10 @@ class Post(models.Model):
 	def save(self, *args, **kwargs):
 		if not self.slug:
 			self.slug = slugify(self.title)
+		if not self.meta_desc:
+			self.meta_desc = self.body[:175] + '...'
+		if not self.header:
+			self.header = self.title
 		super(Post, self).save(*args, **kwargs)
 
 	def __str__(self):

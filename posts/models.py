@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.db import models
 
 from django.template.defaultfilters import slugify
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
 
 # Create your models here.
 
@@ -12,6 +14,7 @@ class Category(models.Model):
 	meta_desc = models.CharField(max_length=200, blank=True)
 	header = models.CharField(max_length=200, blank=True)
 	image = models.ImageField(upload_to='media/', blank=True, null=True)
+	image_thumbnail = ImageSpecField(source='image', processors=[ResizeToFill(100, 50)], format='JPEG', options={'quality': 60})
 	body = models.TextField(blank=True, default='')
 	slug = models.SlugField(max_length=100, db_index=True, blank=True, unique=True)
 
@@ -33,6 +36,7 @@ class Post(models.Model):
 	header = models.CharField(max_length=200, blank=True)
 	pub_date = models.DateTimeField()
 	image = models.ImageField(upload_to='media/', blank=True, null=True)
+	image_thumbnail = ImageSpecField(source='image', processors=[ResizeToFill(100, 50)], format='JPEG', options={'quality': 60})
 	body = models.TextField(blank=True, default='')
 	slug = models.SlugField(max_length=100, blank=True, unique=True)
 	category = models.ForeignKey(Category, default=0)

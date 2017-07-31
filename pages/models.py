@@ -13,7 +13,7 @@ class Page(models.Model):
 	meta_desc = models.CharField(max_length=200, blank=True)
 	header = models.CharField(max_length=200, blank=True)
 	pub_date = models.DateTimeField()
-	image = FileBrowseField("Image", max_length=200, directory="uploads/", extensions=[".jpg", ".jpeg"], blank=True, null=True)
+	image = FileBrowseField("Image", max_length=200, directory="pages/", extensions=[".jpg", ".jpeg"], blank=True, null=True)
 	body = models.TextField(blank=True, default='')
 	slug = models.SlugField(max_length=60, blank=True)
 

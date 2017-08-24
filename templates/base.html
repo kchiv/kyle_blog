@@ -34,7 +34,7 @@
   	    </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       		<ul class="nav navbar-nav navbar-right">
-          {% for cat in category %}
+          {% for cat in category_cont %}
             <li><a href="{% url 'posts:category_page' cat.slug %}">{{ cat.title }}</a></li>
           {% endfor %}
       			<li><a href="{% url 'pages:single_page' page_slug='about' %}">About</a></li>
@@ -55,14 +55,34 @@
       <div class="container-fluid container">
         <div class="row">
           <div class="custom-foo">
-            <div class="col-md-6">Test</div>
-            <div class="col-md-3">Test</div>
-            <div class="col-md-3">Test</div>
+            <div class="col-md-5">
+              <h5>RECENT POSTS</h5>
+              {% for posts in posts_context %}
+                <p>
+                  <a href="{% url 'posts:post_page' posts.category.slug posts.slug %}">
+                    <span>{{ posts.title }}</span><br>
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    <span class="post-date-footer"> {{ posts.pub_date_pretty }}</span>
+                  </a>
+                </p>
+              {% endfor %}
+            </div>
+            <div class="col-md-4">
+              <h5>CATEGORIES</h5>
+              <ul class="cat-footer">
+              {% for cat in category_cont %}
+                <li><a href="{% url 'posts:category_page' cat.slug %}">{{ cat.title }}</a></li>
+              {% endfor %}
+              </ul>
+            </div>
+            <div class="col-md-3">
+            <h5>FOLLOW ME</h5>
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <div class="copyright">
+            <div class="copyright text-center">
               <p>Copyright {% now "Y" %} Kyle Chivers</p>
             </div>
           </div>

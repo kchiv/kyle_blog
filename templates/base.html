@@ -57,7 +57,7 @@
           <div class="custom-foo">
             <div class="col-md-5">
               <h5>RECENT POSTS</h5>
-              {% for posts in posts_context %}
+              {% for posts in posts_context|slice:':3' %}
                 <p>
                   <a href="{% url 'posts:post_page' posts.category.slug posts.slug %}">
                     <span>{{ posts.title }}</span><br>
@@ -83,7 +83,7 @@
         <div class="row">
           <div class="col">
             <div class="copyright text-center">
-              <p>Copyright {% now "Y" %} Kyle Chivers</p>
+              <p>Copyright &copy; {% now "Y" %} Kyle Chivers</p>
             </div>
           </div>
         </div>

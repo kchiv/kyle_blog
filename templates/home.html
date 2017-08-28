@@ -5,8 +5,8 @@
 
 {% block content %}
 
-	{% for post in posts %}
-		<h1><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h1>
+	{% for post in posts|slice:':4' %}
+		<h1 class="{% if forloop.counter|divisibleby:2 %}even{% else %}odd{% endif %}"><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h1>
 		<p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}</p>
 		<p>{{ post.summary|striptags }}</p>
 	{% endfor %}

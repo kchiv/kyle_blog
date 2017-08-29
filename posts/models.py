@@ -4,7 +4,6 @@ from __future__ import unicode_literals
 from django.db import models
 
 from django.template.defaultfilters import slugify
-from filebrowser.fields import FileBrowseField
 
 # Create your models here.
 
@@ -12,8 +11,6 @@ class Category(models.Model):
 	title = models.CharField(max_length=100, db_index=True, unique=True)
 	meta_desc = models.CharField(max_length=200, blank=True)
 	header = models.CharField(max_length=200, blank=True)
-	featured_image = FileBrowseField("Featured Image", max_length=200, directory="category/", extensions=[".jpg", ".jpeg"], blank=True)
-	thumb_image = FileBrowseField("Thumb Image", max_length=200, directory="category/", extensions=[".jpg", ".jpeg"], blank=True)
 	body = models.TextField(blank=True, default='')
 	slug = models.SlugField(max_length=100, db_index=True, blank=True, unique=True)
 
@@ -34,8 +31,6 @@ class Post(models.Model):
 	meta_desc = models.CharField(max_length=200, blank=True)
 	header = models.CharField(max_length=200, blank=True)
 	pub_date = models.DateTimeField()
-	featured_image = FileBrowseField("Featured Image", max_length=200, directory="posts/", extensions=[".jpg", ".jpeg"], blank=True)
-	thumb_image = FileBrowseField("Thumb Image", max_length=200, directory="posts/", extensions=[".jpg", ".jpeg"], blank=True)
 	body = models.TextField(blank=True, default='')
 	slug = models.SlugField(max_length=100, blank=True, unique=True)
 	category = models.ForeignKey(Category, default=0)

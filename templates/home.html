@@ -55,44 +55,68 @@
 		<div class="post-one">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-6 col-md-offset-6">
-						<h2><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h2>
-						<p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}</p>
-						<p>{{ post.summary|striptags }}</p>
+					<div class="col-md-6 col-md-offset-6 post-text post-back">
+						<div class="post-row">
+							<span class="post-cell">
+								<h2><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h2>
+								<hr>
+								<p>{{ post.summary|striptags }}</p>
+								<p class="post-info"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}
+								<a href="{% url 'posts:category_page' post.category.slug %}"><span class="cat-glyph glyphicon glyphicon-book" aria-hidden="true"></span> {{ post.category }}</a></p>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		{% elif forloop.counter == 2 %}
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-6 post-two"></div>
-					<div class="col-md-6">
-						<h2><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h2>
-						<p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}</p>
-						<p>{{ post.summary|striptags }}</p>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 post-two"></div>
+				<div class="col-md-6 post-text">
+					<div class="post-row">
+						<span class="post-cell">
+							<h2><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h2>
+							<hr>
+							<p>{{ post.summary|striptags }}</p>
+							<p class="post-info"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}
+							<a href="{% url 'posts:category_page' post.category.slug %}"><span class="cat-glyph glyphicon glyphicon-book" aria-hidden="true"></span> {{ post.category }}</a></p>
+						</span>
 					</div>
 				</div>
 			</div>
+		</div>
 		{% elif forloop.counter == 3 %}
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-6 post-three"></div>
-					<div class="col-md-6">
-						<h2><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h2>
-						<p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}</p>
-						<p>{{ post.summary|striptags }}</p>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 post-three"></div>
+				<div class="col-md-6 post-text">
+					<div class="post-row">
+						<span class="post-cell">
+							<h2><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h2>
+							<hr>
+							<p>{{ post.summary|striptags }}</p>
+							<p class="post-info"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}
+							<a href="{% url 'posts:category_page' post.category.slug %}"><span class="cat-glyph glyphicon glyphicon-book" aria-hidden="true"></span> {{ post.category }}</a></p>
+						</span>
 					</div>
 				</div>
 			</div>
+		</div>
 		{% elif forloop.counter == 4 %}
 		<div class="post-four">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-6">
-						<h2><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h2>
-						<p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}</p>
-						<p>{{ post.summary|striptags }}</p>
+					<div class="col-md-6 post-text post-back">
+						<div class="post-row">
+							<span class="post-cell">
+								<h2><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h2>
+								<hr>
+								<p>{{ post.summary|striptags }}</p>
+								<p class="post-info"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}
+								<a href="{% url 'posts:category_page' post.category.slug %}"><span class="cat-glyph glyphicon glyphicon-book" aria-hidden="true"></span> {{ post.category }}</a></p>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>

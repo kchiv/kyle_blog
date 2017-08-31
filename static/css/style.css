@@ -9,7 +9,7 @@ body {
 .custom-nav {
 	background-color: #ffffff;
 	border-bottom: 2px solid #e9e9e9;
-	margin-bottom: -20px;
+	/* margin-bottom: -20px; */
 }
 
 .navbar-brand {
@@ -39,4 +39,33 @@ body {
 
 .post-date-footer {
 	font-weight: 200;
+}
+
+/** HOMEPAGE POSTS **/
+
+.post-text {
+	height: 500px;
+	display: table;
+	padding: 100px;
+}
+
+.post-row {
+	display: table-row;
+}
+
+.post-cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.post-back {
+	background: rgba(56,56,56,0.5);
+}
+
+.cat-glyph {
+	padding-left: 3%;
+}
+
+.post-info {
+	text-transform: uppercase;
 }

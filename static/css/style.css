@@ -69,3 +69,25 @@ body {
 .post-info {
 	text-transform: uppercase;
 }
+
+.post-back a {
+	color: #ffffff;
+}
+
+.post-back a:hover {
+	color: #aeaeae;
+	text-decoration: none;
+}
+
+.mid-post a {
+	color: #696969;
+}
+
+.mid-post a:hover {
+	color: #333333;
+	text-decoration: none;
+}
+
+.mid-post hr {
+	border-top: 1px solid #696969;
+}

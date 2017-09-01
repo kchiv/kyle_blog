@@ -5,12 +5,139 @@
 
 {% block content %}
 
-	<h1>{{ cat_obj.header }}</h1>
-
-	{% for post in posts %}
-		<h3>{{ post.title }}</h3>
-		<p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}</p>
-		<p>{{ post.summary|striptags }}</p>
+	<style type="text/css">
+	{% for post in posts|slice:':4' %}
+		{% if forloop.counter == 1 %}
+			.post-one {
+				background-image: url({{ post.featured_image.url }});
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				height: 500px;
+				color: #FFFFFF;
+			}
+		{% elif forloop.counter == 2 %}
+			.post-two {
+				background-image: url({{ post.featured_image.url }});
+				background-repeat: no-repeat;
+				background-size: auto;
+				background-position: center;
+				height: 500px;
+				width: 50%;
+				color: #696969;
+				float: right;
+			}
+		{% elif forloop.counter == 3 %}
+			.post-three {
+				background-image: url({{ post.featured_image.url }});
+				background-repeat: no-repeat;
+				background-size: auto;
+				background-position: center;
+				height: 500px;
+				width: 50%;
+				color: #696969;
+			}
+		{% elif forloop.counter == 4 %}
+			.post-four {
+				background-image: url({{ post.featured_image.url }});
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				height: 500px;
+				color: #FFFFFF;
+			}
+		{% endif %}
 	{% endfor %}
+	</style>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4 text-center">
+				<h1>{{ cat_obj.title }}</h1>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center">
+				<p>{{ cat_obj.body }}</p>
+			</div>
+		</div>
+	</div>
+
+	{% for post in posts|slice:':4' %}
+		{% if forloop.counter == 1 %}
+		<div class="post-one">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-6 post-text post-back">
+						<div class="post-row">
+							<span class="post-cell">
+								<h2><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h2>
+								<hr>
+								<p>{{ post.summary|striptags }}</p>
+								<p class="post-info"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}
+								<a href="{% url 'posts:category_page' post.category.slug %}"><span class="cat-glyph glyphicon glyphicon-book" aria-hidden="true"></span> {{ post.category }}</a></p>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% elif forloop.counter == 2 %}
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 post-two"></div>
+				<div class="col-md-6 post-text mid-post">
+					<div class="post-row">
+						<span class="post-cell">
+							<h2><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h2>
+							<hr>
+							<p>{{ post.summary|striptags }}</p>
+							<p class="post-info"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}
+							<a href="{% url 'posts:category_page' post.category.slug %}"><span class="cat-glyph glyphicon glyphicon-book" aria-hidden="true"></span> {{ post.category }}</a></p>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% elif forloop.counter == 3 %}
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 post-three"></div>
+				<div class="col-md-6 post-text mid-post">
+					<div class="post-row">
+						<span class="post-cell">
+							<h2><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h2>
+							<hr>
+							<p>{{ post.summary|striptags }}</p>
+							<p class="post-info"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}
+							<a href="{% url 'posts:category_page' post.category.slug %}"><span class="cat-glyph glyphicon glyphicon-book" aria-hidden="true"></span> {{ post.category }}</a></p>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% elif forloop.counter == 4 %}
+		<div class="post-four">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6 post-text post-back">
+						<div class="post-row">
+							<span class="post-cell">
+								<h2><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h2>
+								<hr>
+								<p>{{ post.summary|striptags }}</p>
+								<p class="post-info"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}
+								<a href="{% url 'posts:category_page' post.category.slug %}"><span class="cat-glyph glyphicon glyphicon-book" aria-hidden="true"></span> {{ post.category }}</a></p>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+	{% endfor %}
+
+
 
 {% endblock %}

@@ -18,6 +18,7 @@ body {
 
 .navbar-right {
 	font-weight: 600;
+	text-transform: uppercase;
 }
 
 /** FOOTER **/
@@ -39,6 +40,10 @@ body {
 
 .post-date-footer {
 	font-weight: 200;
+}
+
+#foot-soc i {
+	margin-right: 15px;
 }
 
 footer a {
@@ -99,4 +104,59 @@ footer a:hover {
 
 .mid-post hr {
 	border-top: 1px solid #696969;
+}
+
+/** GLOBAL FONT STYLES **/
+h2 {
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+/** SEE MORE HOMEPAGE **/
+.more-cat {
+	display: inline-flex;
+}
+
+.more-cat h2 {
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+.more-cat a {
+	color: #696969;
+	font-weight: 300;
+	font-style: italic;
+}
+
+.more-cat a:hover {
+	color: #333333;
+	text-decoration: none;
+}
+
+.home-cat {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.home-cat hr {
+	border-top: 1px solid #696969;
+}
+
+/** ABOUT HP **/
+.ab-sc {
+	margin-bottom: 40px;
+}
+
+.social-ab {
+	font-style: italic;
+	text-transform: uppercase;
+}
+
+.social-ab i {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.follow-ab {
+	display: inline-flex;
 }

@@ -112,6 +112,11 @@ h2 {
 	font-weight: 700;
 }
 
+h1 {
+	text-transform: uppercase;
+	font-weight: 800;
+}
+
 /** SEE MORE HOMEPAGE **/
 .more-cat {
 	display: inline-flex;
@@ -189,4 +194,56 @@ h2 {
 /** CATEGORY **/
 .cat-header hr {
 	border-top: 1px solid #696969;
+}
+
+
+/** POST PAGE **/
+.single-text {
+	height: 500px;
+	display: table;
+	padding: 100px;
+}
+
+.single-row {
+	display: table-row;
+}
+
+.single-cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.single-back {
+	background: rgba(56,56,56,0.5);
+}
+
+.single-back a {
+	color: #ffffff;
+}
+
+.single-back a:hover {
+	color: #aeaeae;
+	text-decoration: none;
+}
+
+#share-buttons {
+	text-transform: uppercase;
+}
+
+#share-buttons i {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.single-body {
+	margin-top: 30px;
+}
+
+.single-body p {
+	max-width: 80%;
+	margin: auto;
+}
+
+.single-body img {
+	max-width: 100%;
 }

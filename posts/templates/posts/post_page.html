@@ -5,9 +5,45 @@
 
 {% block content %}
 
-	<h1>{{ post.header }}</h1>
-	<p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}</p>
-	<img src="{{ post.image.url }}">
-	<p>{{ post.body|safe }}</p>
+	<style type="text/css">
+			.single-post {
+				background-image: url({{ post.featured_image.url }});
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				height: 500px;
+				color: #FFFFFF;
+			}
+	</style>
+
+	<div class="container">
+		<div class="row">
+			<div class="single-post">
+				<div class="col-sm-12 text-center single-text single-back">
+					<div class="single-row">
+						<span class="single-cell">
+							<h1>{{ post.header }}</h1>
+							<div class="row">
+								<div class="col-sm-6 col-sm-offset-3">
+									<hr>
+									<p class="post-info"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}
+									<a href="{% url 'posts:category_page' post.category.slug %}"><span class="cat-glyph glyphicon glyphicon-book" aria-hidden="true"></span> {{ post.category }}</a></p>
+									<h3 id="share-buttons">Share:<a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a><a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i></a><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></h3>
+								</div>
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 single-body">
+				{{ post.body|safe }}
+			</div>
+		</div>
+	</div>
 
 {% endblock %}

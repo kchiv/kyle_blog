@@ -38,7 +38,7 @@
           {% for cat in category_cont %}
             <li><a href="{% url 'posts:category_page' cat.slug %}">{{ cat.title }}</a></li>
           {% endfor %}
-      			<li><a href="{% url 'pages:single_page' page_slug='about' %}">About</a></li>
+      			<li><a href="{% url 'home' %}#about">About</a></li>
       		</ul>
         </div>
       </div>

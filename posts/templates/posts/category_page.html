@@ -6,7 +6,7 @@
 {% block content %}
 
 	<style type="text/css">
-	{% for post in posts|slice:':4' %}
+	{% for post in post_paginate %}
 		{% if forloop.counter == 1 %}
 			.post-one {
 				background-image: url({{ post.featured_image.url }});
@@ -64,7 +64,7 @@
 		</div>
 	</div>
 
-	{% for post in posts|slice:':4' %}
+	{% for post in post_paginate %}
 		{% if forloop.counter == 1 %}
 		<div class="post-one">
 			<div class="container-fluid">
@@ -139,5 +139,32 @@
 	{% endfor %}
 
 
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				{% if post_paginate.has_other_pages %}
+					<div class="paginate">
+						{% if post_paginate.has_previous %}
+						<a href="?page={{ post_paginate.previous_page_number }}"><span class="glyphicon glyphicon-chevron-left"></span></a>
+						{% else %}
+						{% endif %}
+						{% for i in post_paginate.paginator.page_range %}
+						{% if post_paginate.number == i %}
+							<a href="#" class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
+						{% else %}
+							<a href="?page={{ i }}">{{ i }}</a>
+						{% endif %}
+						{% endfor %}
+						{% if post_paginate.has_next %}
+							<a href="?page={{ post_paginate.next_page_number }}"><span class="glyphicon glyphicon-chevron-right"></span></a>
+						{% else %}
+						{% endif %}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 
 {% endblock %}

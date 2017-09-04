@@ -160,3 +160,28 @@ h2 {
 .follow-ab {
 	display: inline-flex;
 }
+
+
+/** Pagination **/
+
+.paginate {
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.paginate a {
+    color: #696969;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    font-weight: 600;
+}
+
+.paginate a.active {
+    background-color: #696969;
+    color: white;
+}
+
+.paginate a:hover:not(.active) {background-color: #ddd;}

@@ -162,7 +162,7 @@ h2 {
 }
 
 
-/** Pagination **/
+/** PAGINATION **/
 
 .paginate {
     display: inline-block;
@@ -185,3 +185,8 @@ h2 {
 }
 
 .paginate a:hover:not(.active) {background-color: #ddd;}
+
+/** CATEGORY **/
+.cat-header hr {
+	border-top: 1px solid #696969;
+}

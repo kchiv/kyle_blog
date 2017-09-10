@@ -128,16 +128,16 @@
 						{% else %}
 						{% endif %}
 						{% for i in post_paginate.paginator.page_range %}
-						{% if post_paginate.number == i %}
-							<a href="#" class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
-						{% else %}
-							<a href="?page={{ i }}">{{ i }}</a>
-						{% endif %}
+							{% if post_paginate.number == i %}
+								<a href="#" class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
+							{% elif i > post_paginate.number|add:'-2' and i < post_paginate.number|add:'2' %}
+								<a href="?page={{ i }}">{{ i }}</a>
+							{% endif %}
 						{% endfor %}
-						{% if post_paginate.has_next %}
-							<a href="?page={{ post_paginate.next_page_number }}"><span class="glyphicon glyphicon-chevron-right"></span></a>
-						{% else %}
-						{% endif %}
+							{% if post_paginate.has_next %}
+								<a href="?page={{ post_paginate.next_page_number }}"><span class="glyphicon glyphicon-chevron-right"></span></a>
+							{% else %}
+							{% endif %}
 					</div>
 				{% endif %}
 			</div>

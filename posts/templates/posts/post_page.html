@@ -2,6 +2,7 @@
 
 {% block title %}{{ post.title }}{% endblock %}
 {% block metadescription %}{{ post.meta_desc|striptags }}{% endblock %}
+{% block canonical_url %}http://www.kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}{% endblock %}
 
 {% block content %}
 

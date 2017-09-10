@@ -10,41 +10,18 @@
 		{% if forloop.counter == 1 %}
 			.post-one {
 				background-image: url({{ post.featured_image.url }});
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-position: center;
-				height: 500px;
-				color: #FFFFFF;
 			}
 		{% elif forloop.counter == 2 %}
 			.post-two {
 				background-image: url({{ post.featured_image.url }});
-				background-repeat: no-repeat;
-				background-size: auto;
-				background-position: center;
-				height: 500px;
-				width: 50%;
-				color: #696969;
-				float: right;
 			}
 		{% elif forloop.counter == 3 %}
 			.post-three {
 				background-image: url({{ post.featured_image.url }});
-				background-repeat: no-repeat;
-				background-size: auto;
-				background-position: center;
-				height: 500px;
-				width: 50%;
-				color: #696969;
 			}
 		{% elif forloop.counter == 4 %}
 			.post-four {
 				background-image: url({{ post.featured_image.url }});
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-position: center;
-				height: 500px;
-				color: #FFFFFF;
 			}
 		{% endif %}
 	{% endfor %}

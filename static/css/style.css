@@ -220,6 +220,10 @@ h1 {
 	margin-bottom: 40px;
 }
 
+.ab-sc strong {
+	font-size: 20px;
+}
+
 .social-ab {
 	font-style: italic;
 	text-transform: uppercase;

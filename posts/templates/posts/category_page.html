@@ -41,6 +41,16 @@
 		</div>
 	</div>
 
+	{% if not posts %}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h3>There No Posts Yet</h3>
+				</div>
+			</div>	
+		</div>
+	{% endif %}
+
 	{% for post in post_paginate %}
 		{% if forloop.counter == 1 %}
 		<div class="post-one">

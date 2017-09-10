@@ -57,7 +57,7 @@
         <div class="row">
           <div class="custom-foo">
             <div class="col-md-5">
-              <h5>RECENT POSTS</h5>
+              <h4>RECENT POSTS</h4>
               {% for posts in posts_context|slice:':3' %}
                 <p>
                   <a href="{% url 'posts:post_page' posts.category.slug posts.slug %}">
@@ -69,7 +69,7 @@
               {% endfor %}
             </div>
             <div class="col-md-4">
-              <h5>CATEGORIES</h5>
+              <h4>CATEGORIES</h4>
               <ul class="cat-footer">
               {% for cat in category_cont %}
                 <li><a href="{% url 'posts:category_page' cat.slug %}">{{ cat.title }}</a></li>
@@ -77,7 +77,7 @@
               </ul>
             </div>
             <div class="col-md-3">
-            <h5>FOLLOW ME</h5>
+            <h4>FOLLOW ME</h4>
             <h2 id="foot-soc"><a href="https://twitter.com/ChiversKyle"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="https://www.facebook.com/kylechiversnmfn"><i class="fa fa-facebook-official" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/kyle-chivers-6067b616/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><a href="https://github.com/kchiv"><i class="fa fa-github" aria-hidden="true"></i></a></h2>
             </div>
           </div>

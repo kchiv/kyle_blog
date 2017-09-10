@@ -339,9 +339,9 @@ h1 {
 @media (max-width: 1200px) {
 
 
-/************************/
-/** DESKTOP HOME SMALL **/
-/************************/
+	/***********************************/
+	/** DESKTOP HOME & CATEOGRY SMALL **/
+	/***********************************/
 
 	.post-text {
 		padding: 50px;
@@ -359,9 +359,9 @@ h1 {
 @media (max-width: 992px) {
 
 
-/*****************/
-/** MOBILE HOME **/
-/*****************/
+	/****************************/
+	/** MOBILE HOME & Category **/
+	/****************************/
 
 
 	.post-two {
@@ -406,24 +406,6 @@ h1 {
 		float: none;
 	}
 
-	.ab-sc {
-		margin-bottom: 40px;
-	}
-
-	.social-ab {
-		font-style: italic;
-		text-transform: uppercase;
-	}
-
-	.social-ab i {
-		margin-left: 10px;
-		margin-right: 10px;
-	}
-
-	.follow-ab {
-		display: inline-flex;
-	}
-
 }
 
 
@@ -435,17 +417,17 @@ h1 {
 @media (max-width: 700px) {
 
 
-/*****************/
-/** MOBILE HOME **/
-/*****************/
+	/*******************/
+	/** MOBILE HOME 2 **/
+	/*******************/
 
 	.more-cat {
 		display: inline-block;
 	}
 
-/***********************/
-/** ABOUT HP MOBILE 2 **/
-/***********************/
+	/***********************/
+	/** ABOUT HP MOBILE 2 **/
+	/***********************/
 
 	.social-ab {
 		font-style: italic;

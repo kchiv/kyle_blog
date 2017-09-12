@@ -29,6 +29,9 @@ class Category(models.Model):
 	def __str__(self):
 		return self.title
 
+	def get_absolute_url(self):
+		return "/blog/%s/" % self.slug
+
 class Post(models.Model):
 	title = models.CharField(max_length=250, unique=True)
 	meta_desc = models.CharField(max_length=200, blank=True)

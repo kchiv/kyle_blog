@@ -1,5 +1,5 @@
 from django.contrib.sitemaps import Sitemap
-from posts.models import Post
+from posts.models import Post, Category
 
 class PostSitemap(Sitemap):
 	changefreq = 'monthly'
@@ -10,3 +10,10 @@ class PostSitemap(Sitemap):
 
 	def lastmod(self, item):
 		return item.pub_date
+
+class CategorySitemap(Sitemap):
+	changefreq = 'weekly'
+	priority = 0.7
+
+	def items(self):
+		return Category.objects.all()

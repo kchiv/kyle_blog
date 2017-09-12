@@ -59,3 +59,6 @@ class Post(models.Model):
 			return self.body[:200] + '...'
 		else:
 			return self.body
+
+	def get_absolute_url(self):
+		return "/blog/%s/%s/" % (self.category.slug, self.slug)

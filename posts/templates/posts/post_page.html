@@ -47,4 +47,13 @@
 		</div>
 	</div>
 
+	{% if post.custom_css.url %}
+	<link rel="stylesheet" type="text/css" href="{{ post.custom_css.url }}">
+	{% else %}
+	{% endif %}
+	{% if post.custom_js.url %}
+	<script src="{{ post.custom_js.url }}"></script>
+	{% else %}
+	{% endif %}
+
 {% endblock %}

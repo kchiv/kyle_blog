@@ -41,6 +41,8 @@ class Post(models.Model):
 	body = models.TextField(blank=True, default='')
 	slug = models.SlugField(max_length=100, blank=True, unique=True)
 	category = models.ForeignKey(Category, default=0)
+	custom_css = FilerFileField(null=True, blank=True, related_name="post_css")
+	custom_js = FilerFileField(null=True, blank=True, related_name="post_js")
 
 	def save(self, *args, **kwargs):
 		if not self.slug:

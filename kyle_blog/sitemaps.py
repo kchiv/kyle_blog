@@ -1,5 +1,6 @@
 from django.contrib.sitemaps import Sitemap
 from posts.models import Post, Category
+from pages.models import Page
 
 class PostSitemap(Sitemap):
 	changefreq = 'monthly'
@@ -17,3 +18,10 @@ class CategorySitemap(Sitemap):
 
 	def items(self):
 		return Category.objects.all()
+
+class PageSitemap(Sitemap):
+	changefreq = 'monthly'
+	priority = 0.5
+
+	def items(self):
+		return Page.objects.all()

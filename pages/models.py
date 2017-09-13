@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.db import models
 
 from django.template.defaultfilters import slugify
+from filer.fields.image import FilerImageField
+from filer.fields.file import FilerFileField
 
 # Create your models here.
 
@@ -14,6 +16,8 @@ class Page(models.Model):
 	pub_date = models.DateTimeField()
 	body = models.TextField(blank=True, default='')
 	slug = models.SlugField(max_length=60, blank=True)
+	custom_css = FilerFileField(null=True, blank=True, related_name="page_css")
+	custom_js = FilerFileField(null=True, blank=True, related_name="page_js")
 
 	def save(self, *args, **kwargs):
 		if not self.slug:
@@ -35,3 +39,6 @@ class Page(models.Model):
 			return self.body[:100] + '...'
 		else:
 			return self.body
+
+	def get_absolute_url(self):
+		return "/page/%s/" % (self.slug)

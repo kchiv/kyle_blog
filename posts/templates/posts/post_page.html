@@ -4,6 +4,16 @@
 {% block metadescription %}{{ post.meta_desc|striptags }}{% endblock %}
 {% block canonical_url %}{% url 'posts:post_page' post.category.slug post.slug %}{% endblock %}
 
+{% block social_data %}
+	<meta property="og:title" content="{{ post.title }}" />
+	<meta property="og:type" content="article" />
+	<meta property="og:description" content="{{ post.meta_desc|striptags }}" />
+	<meta property="og:url" content="http://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}" />
+	<meta property="og:image" content="http://kylechivers.com{{ post.featured_image.url }}" />
+	<meta property="article:section" content="{{ post.category }}" />
+	<meta property="article:published_time" content="{{ post.pub_date_og }}" />
+{% endblock %}
+
 {% block content %}
 
 	<style type="text/css">

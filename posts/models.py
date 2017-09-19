@@ -59,7 +59,7 @@ class Post(models.Model):
 	def pub_date_pretty(self):
 		return self.pub_date.strftime('%b %m, %Y')
 
-	def pub_date_og(self):
+	def pub_date_meta(self):
 		return self.pub_date.strftime('%Y-%m-%dT%H:%M:%SZ')
 
 	def summary(self):

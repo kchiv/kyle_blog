@@ -12,7 +12,7 @@
 	<meta property="og:url" content="http://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}" />
 	<meta property="og:image" content="http://kylechivers.com{{ post.featured_image.url }}" />
 	<meta property="article:section" content="{{ post.category }}" />
-	<meta property="article:published_time" content="{{ post.pub_date_og }}" />
+	<meta property="article:published_time" content="{{ post.pub_date_meta }}" />
 	<!-- Twitter Cards -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@ChiversKyle">
@@ -20,6 +20,38 @@
 	<meta name="twitter:title" content="{{ post.title }}">
 	<meta name="twitter:description" content="{{ post.meta_desc|striptags }}">
 	<meta name="twitter:image" content="http://kylechivers.com{{ post.featured_image.url }}">
+{% endblock %}
+
+{% block schema_data %}
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "BlogPosting",
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "http://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}"
+			},
+			"headline": "{{ post.title }}",
+			"image": [
+				"http://kylechivers.com{{ post.featured_image.url }}"
+			],
+			"datePublished": "{{ post.pub_date_meta }}",
+			"dateModified": "",
+			"author": {
+				"@type": "Person",
+				"name": "Kyle Chivers"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Kyle Chivers",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "http://kylechivers.com"
+				}
+			},
+			"description": "{{ post.meta_desc|striptags }}"
+		}
+	</script>
 {% endblock %}
 
 {% block content %}

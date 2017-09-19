@@ -6,6 +6,7 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from filer.fields.image import FilerImageField
 from filer.fields.file import FilerFileField
+import datetime
 
 # Create your models here.
 
@@ -38,6 +39,7 @@ class Post(models.Model):
 	header = models.CharField(max_length=200, blank=True)
 	featured_image = FilerImageField(null=True, blank=True, related_name="post_featured_image")
 	pub_date = models.DateTimeField()
+	mod_date = models.DateTimeField(auto_now = True)
 	body = models.TextField(blank=True, default='')
 	slug = models.SlugField(max_length=100, blank=True, unique=True)
 	category = models.ForeignKey(Category, default=0)
@@ -51,6 +53,7 @@ class Post(models.Model):
 			self.meta_desc = self.body[:175] + '...'
 		if not self.header:
 			self.header = self.title
+		self.mod_date = datetime.datetime.now()
 		super(Post, self).save(*args, **kwargs)
 
 	def __str__(self):
@@ -61,6 +64,9 @@ class Post(models.Model):
 
 	def pub_date_meta(self):
 		return self.pub_date.strftime('%Y-%m-%dT%H:%M:%SZ')
+
+	def pub_date_mod(self):
+		return self.mod_date.strftime('%Y-%m-%dT%H:%M:%SZ')
 
 	def summary(self):
 		if len(self.body) >= 100:

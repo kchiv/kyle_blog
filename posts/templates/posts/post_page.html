@@ -36,7 +36,7 @@
 				"http://kylechivers.com{{ post.featured_image.url }}"
 			],
 			"datePublished": "{{ post.pub_date_meta }}",
-			"dateModified": "",
+			"dateModified": "{{ post.pub_date_mod }}",
 			"author": {
 				"@type": "Person",
 				"name": "Kyle Chivers"
@@ -46,7 +46,7 @@
 				"name": "Kyle Chivers",
 				"logo": {
 					"@type": "ImageObject",
-					"url": "http://kylechivers.com"
+					"url": "http://kylechivers.com/image.jpg"
 				}
 			},
 			"description": "{{ post.meta_desc|striptags }}"

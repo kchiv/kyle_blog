@@ -10,7 +10,7 @@ body {
 
 .custom-nav {
 	background-color: #ffffff;
-	border-bottom: none;
+	border-bottom: 1px solid #e7e7e7;
 	/* margin-bottom: -20px; */
 }
 

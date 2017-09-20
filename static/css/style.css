@@ -28,6 +28,10 @@ body {
 	border-color: #ffffff;
 }
 
+.navbar-default .navbar-toggle {
+	border-color: #ffffff;
+}
+
 #logo img {
 	max-width: 12em;
 }

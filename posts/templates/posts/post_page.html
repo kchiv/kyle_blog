@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}{{ post.title }}{% endblock %}
 {% block metadescription %}{{ post.meta_desc|striptags }}{% endblock %}
@@ -23,6 +24,7 @@
 {% endblock %}
 
 {% block schema_data %}
+	<!-- Schema -->
 	<script type="application/ld+json">
 		{
 			"@context": "http://schema.org",
@@ -46,7 +48,7 @@
 				"name": "Kyle Chivers",
 				"logo": {
 					"@type": "ImageObject",
-					"url": "http://kylechivers.com/image.jpg"
+					"url": "http://kylechivers.com{% static 'img/kyle_logo.png' %}"
 				}
 			},
 			"description": "{{ post.meta_desc|striptags }}"

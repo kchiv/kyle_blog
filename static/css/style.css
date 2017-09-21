@@ -355,7 +355,9 @@ h1 {
 	max-width: 100%;
 }
 
-
+#disqus_thread {
+	padding: 10px;
+}
 
 
 /*******************/

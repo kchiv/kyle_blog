@@ -344,7 +344,8 @@ h1 {
 .single-body h5, 
 .single-body h6, 
 .single-body ul, 
-.single-body ol {
+.single-body ol,
+.single-body pre {
 	max-width: 80%;
 	margin: auto;
 	margin-top: 20px;
@@ -511,7 +512,8 @@ h1 {
 	.single-body h5, 
 	.single-body h6, 
 	.single-body ul, 
-	.single-body ol {
+	.single-body ol,
+	.single-body pre {
 		max-width: 100%;
 		margin: auto;
 		margin-top: 20px;

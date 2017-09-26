@@ -60,7 +60,7 @@ class Post(models.Model):
 		return self.title
 
 	def pub_date_pretty(self):
-		return self.pub_date.strftime('%b %m, %Y')
+		return self.pub_date.strftime('%b %d, %Y')
 
 	def pub_date_meta(self):
 		return self.pub_date.strftime('%Y-%m-%dT%H:%M:%SZ')

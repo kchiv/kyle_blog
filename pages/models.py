@@ -32,7 +32,7 @@ class Page(models.Model):
 		return self.title
 
 	def pub_date_pretty(self):
-		return self.pub_date.strftime('%b %m, %Y')
+		return self.pub_date.strftime('%b %d, %Y')
 
 	def summary(self):
 		if len(self.body) >= 100:

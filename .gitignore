@@ -1,2 +1,2 @@
 db.sqlite3
-/kyle_blog/settings.py
+.env

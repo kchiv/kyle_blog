@@ -137,7 +137,7 @@ USE_TZ = True
 
 # Used for setting up site manager
 
-SITE_ID = 2
+SITE_ID = 3
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/

@@ -143,9 +143,9 @@ SITE_ID = 2
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = BASE_DIR
 STATICFILES_DIRS = [
-    os.path.join(STATIC_ROOT, 'static'), 
+    os.path.join(STATIC_ROOT, "static"), 
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')

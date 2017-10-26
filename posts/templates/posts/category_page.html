@@ -19,9 +19,7 @@
 {% endif %}
 {% endblock %}
 
-
-{% block content %}
-
+{% block inline_css %}
 	<style type="text/css">
 	{% for post in post_paginate %}
 		{% if forloop.counter == 1 %}
@@ -43,6 +41,10 @@
 		{% endif %}
 	{% endfor %}
 	</style>
+{% endblock %}
+
+
+{% block content %}
 
 	<div class="container">
 		<div class="row">

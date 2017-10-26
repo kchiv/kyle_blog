@@ -56,8 +56,7 @@
 	</script>
 {% endblock %}
 
-{% block content %}
-
+{% block inline_css %}
 	<style type="text/css">
 			.single-post {
 				background-image: url({{ post.featured_image.url }});
@@ -68,6 +67,9 @@
 				color: #FFFFFF;
 			}
 	</style>
+{% endblock %}
+
+{% block content %}
 
 	<div class="container">
 		<div class="row">

@@ -5,8 +5,7 @@
 {% block metadescription %}Developer. Designer. Marketer. Traveler. I'm an SEO by day and full stack developer/UX designer by night. I use this blog to write about some of the things that interest me.{% endblock %}
 {% block canonical_url %}/{% endblock %}
 
-{% block content %}
-
+{% block inline_css %}
 	<style type="text/css">
 	{% for post in posts|slice:':4' %}
 		{% if forloop.counter == 1 %}
@@ -31,6 +30,9 @@
 				background-image: url({% static 'img/kyle_temple_bar.jpg' %});
 			}
 	</style>
+{% endblock %}
+
+{% block content %}
 
 	{% for post in posts|slice:':4' %}
 		{% if forloop.counter == 1 %}

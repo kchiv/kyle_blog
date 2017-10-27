@@ -42,9 +42,11 @@
 					<div class="col-md-6 col-md-offset-6 post-text post-back">
 						<div class="post-row">
 							<span class="post-cell">
-								<h2><a href="{% url 'posts:post_page' post.category.slug post.slug %}">{{ post.title }}</a></h2>
-								<hr>
-								<p>{{ post.summary|striptags }}</p>
+								<a href="{% url 'posts:post_page' post.category.slug post.slug %}">
+									<h2>{{ post.title }}</h2>
+									<hr>
+									<p>{{ post.summary|striptags }}</p>
+								</a>
 								<p class="post-info"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}
 								<a href="{% url 'posts:category_page' post.category.slug %}"><span class="cat-glyph glyphicon glyphicon-book" aria-hidden="true"></span> {{ post.category }}</a></p>
 							</span>

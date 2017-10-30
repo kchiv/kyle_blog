@@ -5,6 +5,7 @@ from pages.models import Page
 class PostSitemap(Sitemap):
 	changefreq = 'monthly'
 	priority = 1.0
+	protocol = 'https'
 
 	def items(self):
 		return Post.objects.all()
@@ -15,6 +16,7 @@ class PostSitemap(Sitemap):
 class CategorySitemap(Sitemap):
 	changefreq = 'weekly'
 	priority = 0.7
+	protocol = 'https'
 
 	def items(self):
 		return Category.objects.all()
@@ -22,6 +24,7 @@ class CategorySitemap(Sitemap):
 class PageSitemap(Sitemap):
 	changefreq = 'monthly'
 	priority = 0.5
+	protocol = 'https'
 
 	def items(self):
 		return Page.objects.all()

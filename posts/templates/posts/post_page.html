@@ -10,8 +10,8 @@
 	<meta property="og:title" content="{{ post.title }}" />
 	<meta property="og:type" content="article" />
 	<meta property="og:description" content="{{ post.meta_desc|striptags }}" />
-	<meta property="og:url" content="http://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}" />
-	<meta property="og:image" content="http://kylechivers.com{{ post.featured_image.url }}" />
+	<meta property="og:url" content="https://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}" />
+	<meta property="og:image" content="https://kylechivers.com{{ post.featured_image.url }}" />
 	<meta property="article:section" content="{{ post.category }}" />
 	<meta property="article:published_time" content="{{ post.pub_date_meta }}" />
 	<!-- Twitter Cards -->
@@ -20,22 +20,22 @@
 	<meta name="twitter:creator" content="@ChiversKyle">
 	<meta name="twitter:title" content="{{ post.title }}">
 	<meta name="twitter:description" content="{{ post.meta_desc|striptags }}">
-	<meta name="twitter:image" content="http://kylechivers.com{{ post.featured_image.url }}">
+	<meta name="twitter:image" content="https://kylechivers.com{{ post.featured_image.url }}">
 {% endblock %}
 
 {% block schema_data %}
 	<!-- Schema -->
 	<script type="application/ld+json">
 		{
-			"@context": "http://schema.org",
+			"@context": "https://schema.org",
 			"@type": "BlogPosting",
 			"mainEntityOfPage": {
 				"@type": "WebPage",
-				"@id": "http://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}"
+				"@id": "https://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}"
 			},
 			"headline": "{{ post.title }}",
 			"image": [
-				"http://kylechivers.com{{ post.featured_image.url }}"
+				"https://kylechivers.com{{ post.featured_image.url }}"
 			],
 			"datePublished": "{{ post.pub_date_meta }}",
 			"dateModified": "{{ post.pub_date_mod }}",
@@ -48,7 +48,7 @@
 				"name": "Kyle Chivers",
 				"logo": {
 					"@type": "ImageObject",
-					"url": "http://kylechivers.com{% static 'img/kyle_logo.png' %}"
+					"url": "https://kylechivers.com{% static 'img/kyle_logo.png' %}"
 				}
 			},
 			"description": "{{ post.meta_desc|striptags }}"
@@ -69,6 +69,7 @@
 	</style>
 {% endblock %}
 
+
 {% block content %}
 
 	<div class="container">
@@ -83,7 +84,7 @@
 									<hr>
 									<p class="post-info"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ post.pub_date_pretty }}
 									<a href="{% url 'posts:category_page' post.category.slug %}"><span class="cat-glyph glyphicon glyphicon-book" aria-hidden="true"></span> {{ post.category }}</a></p>
-									<h3 id="share-buttons">Share:<a target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?original_referer=http://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}&text={{ post.title }}&url=http://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}"><i class="fa fa-twitter" aria-hidden="true"></i></a><a target="_blank" href="http://www.facebook.com/share.php?u=http://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}&title={{ post.title }}"><i class="fa fa-facebook-official" aria-hidden="true"></i></a><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=http://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}&title={{ post.title }}&source=http://www.kylechivers.com/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><a target="_blank" href="https://plus.google.com/share?url=http://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}"><i class="fa fa-google-plus" aria-hidden="true"></i></a></h3>
+									<h3 id="share-buttons">Share:<a target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?original_referer=https://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}&text={{ post.title }}&url=https://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}"><i class="fa fa-twitter" aria-hidden="true"></i></a><a target="_blank" href="https://www.facebook.com/share.php?u=https://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}&title={{ post.title }}"><i class="fa fa-facebook-official" aria-hidden="true"></i></a><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}&title={{ post.title }}&source=https://www.kylechivers.com/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><a target="_blank" href="https://plus.google.com/share?url=https://kylechivers.com{% url 'posts:post_page' post.category.slug post.slug %}"><i class="fa fa-google-plus" aria-hidden="true"></i></a></h3>
 								</div>
 							</div>
 						</span>

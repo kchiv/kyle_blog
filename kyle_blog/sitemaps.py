@@ -13,9 +13,6 @@ class PostSitemap(Sitemap):
 	def lastmod(self, item):
 		return item.pub_date
 
-	def location(self, item):
-		return item.get_absolute_url(protocol)
-
 class CategorySitemap(Sitemap):
 	changefreq = 'weekly'
 	priority = 0.7

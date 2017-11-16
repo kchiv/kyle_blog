@@ -42,6 +42,7 @@
 					<div class="col-md-6 col-md-offset-6 post-text post-back">
 						<div class="post-row">
 							<span class="post-cell">
+								<link rel="prerender" href="{% url 'posts:post_page' post.category.slug post.slug %}">
 								<a href="{% url 'posts:post_page' post.category.slug post.slug %}">
 									<h2>{{ post.title }}</h2>
 									<hr>

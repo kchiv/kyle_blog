@@ -6,7 +6,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 def home(request):
-	posts = Post.objects.order_by('-pub_date')
+	posts = Post.objects.order_by('-pub_date')[:4]
 	return render(request, 'home.html', {'posts':posts})
 
 def handler404(request):

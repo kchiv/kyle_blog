@@ -9,6 +9,8 @@ from .models import Post, Category
 class PostAdmin(admin.ModelAdmin):
 	model = Post
 	list_display = ('title', 'pub_date', 'category', 'meta_desc',)
+	search_fields = ['title']
+	list_filter = ['category']
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category)

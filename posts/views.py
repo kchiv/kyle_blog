@@ -25,3 +25,17 @@ def category_page(request, category_slug):
 		post_paginate = paginator.page(paginator.num_pages)
 
 	return render(request, 'posts/category_page.html', {'posts':posts, 'cat_obj':cat_obj, 'post_paginate':post_paginate})
+
+def all_post_page(request):
+	posts = Post.objects.order_by('-pub_date')
+	page = request.GET.get('page', 1)
+	paginator = Paginator(posts, 4)
+
+	try:
+		post_paginate = paginator.page(page)
+	except PageNotAnInteger:
+		post_paginate = paginator.page(1)
+	except EmptyPage:
+		post_paginate = paginator.page(paginator.num_pages)
+
+	return render(request, 'posts/all_posts_page.html', {'posts':posts, 'post_paginate':post_paginate})

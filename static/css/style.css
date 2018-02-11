@@ -26,10 +26,12 @@ body {
 
 .navbar-default .navbar-collapse {
 	border-color: #ffffff;
+	background-color: #ffffff;
 }
 
 .navbar-default .navbar-toggle {
 	border-color: #ffffff;
+	background-color: #ffffff;
 }
 
 #logo img {
@@ -220,6 +222,15 @@ h1 {
 
 .home-cat hr {
 	border-top: 1px solid #696969;
+}
+
+.see-all-post a {
+	color: #696969;
+}
+
+.see-all-post a:hover {
+	color: #333333;
+	text-decoration: none;
 }
 
 /**************/

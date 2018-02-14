@@ -11,7 +11,7 @@
 	<div class="row">
 		<div class="col-md-12 single-body">
 			<h1>Tool Beast Timeline</h1>
-			<div id="timeline"></div>
+			<div id="timeline" style="height: 500px;"></div>
 		</div>
 	</div>
 </div>
@@ -25,6 +25,9 @@
         var container = document.getElementById('timeline');
         var chart = new google.visualization.Timeline(container);
         var dataTable = new google.visualization.DataTable();
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth();
 
         dataTable.addColumn({ type: 'string', id: 'Project' });
         dataTable.addColumn({ type: 'date', id: 'Start' });
@@ -39,7 +42,8 @@
           ['Social Refresh & Strategry', new Date(2018, 7, 15), new Date(2018, 8, 31)],
           ['Content Plan', new Date(2018, 8, 1), new Date(2018, 10, 30)],
           ['Promo Strategry & Plan', new Date(2018, 8, 1), new Date(2018, 10, 30)],
-          ['Product Image Standardization', new Date(2018, 10, 1), new Date(2018, 11, 31)]]);
+          ['Product Image Standardization', new Date(2018, 10, 1), new Date(2018, 11, 31)],
+          ['Countdown', new Date(2018, 1, 1), new Date(2018, mm, dd)]]);
 
         chart.draw(dataTable);
       }

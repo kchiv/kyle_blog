@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block inline_css %}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+{% endblock %}
+
+{% block content %}
+<div id="timeline"></div>
+
+
+<script>
+      google.charts.load('current', {'packages':['timeline']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'Project' });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        dataTable.addRows([
+          [ 'UX/UI Design', new Date(2018, 1, 1), new Date(2018, 5, 30) ],
+          [ 'Site Development', new Date(2018, 3, 1),  new Date(2018, 6, 31) ],
+          ['QA/Bug Fixes', new Date(2018, 3, 1), new Date(2018, 7, 31)],
+          [ 'Product DB Standarization',  new Date(2018, 6, 1),  new Date(2018, 7, 31) ],
+          ['Push Site to Prod', new Date(2018, 7, 1), new Date(2018, 7, 31)],
+          [ 'Brand Unification', new Date(2018, 7, 15), new Date(2018, 8, 15)],
+          ['Social Refresh & Strategry', new Date(2018, 7, 15), new Date(2018, 8, 31)],
+          ['Content Plan', new Date(2018, 8, 1), new Date(2018, 10, 30)],
+          ['Promo Strategry & Plan', new Date(2018, 8, 1), new Date(2018, 10, 30)],
+          ['Product Image Standardization', new Date(2018, 10, 1), new Date(2018, 11, 31)]]);
+
+        chart.draw(dataTable);
+      }
+</script>
+{% endblock %}

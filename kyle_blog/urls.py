@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.generic import TemplateView
 from django.contrib import admin
 from . import views
 
@@ -24,6 +25,7 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^blog/', include('posts.urls')),
     url(r'^page/', include('pages.urls')),
+    url(r'^tool-beast-timeline/', TemplateView.as_view(template_name='tool_beast.html'), name='tool_beast'),
 ]
 
 if settings.DEBUG:
